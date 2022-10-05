@@ -64,7 +64,8 @@ expect(voteCount(votes2)).toEqual(-31)
 // 
 
   const voteCount = (object) => {
-    return Math.abs((a,b),(a-b))
+    return object.upVotes - object.downVotes
+
     
   }
 
@@ -76,16 +77,24 @@ expect(voteCount(votes2)).toEqual(-31)
   it('merges two arrays and removes copies' ,() => {
 
 
-// const dataArray1 = ["array", "object", "number", "string", "Boolean"]
-// const dataArray2 = ["string", "null", "Boolean", "string", "undefined"]
+const dataArray1 = ["array", "object", "number", "string", "Boolean"]
+const dataArray2 = ["string", "null", "Boolean", "string", "undefined"]
 // Expected output: ["array", "object", "number", "string", "Boolean", "null", "undefined"]
-expect 
+expect(arrMerge(dataArray1,dataArray2)).toEqual(expect.arrayContaining(["array", "object", "number", "string", "Boolean", "null", "undefined"]))
  })
 })
 
 // b) Create the function that makes the test pass.
-const arrMerge = (array1, array2) = {
-   return array1.concat(array2);
+// parameters will pass both arrays
+// returns both into one new array and will combine and delete any copy of a value
+const arrMerge = (array1, array2) => {
+ return 
+ [...newSet(
+  ...arr.reduce((arrayl, array2) =>{
+  return array1.concat(array2);
 
+}),
+ )
+];
+};
 
-}
